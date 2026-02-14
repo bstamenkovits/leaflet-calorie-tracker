@@ -8,6 +8,6 @@ cd frontend
 npm install
 npx ng build
 
-echo "Starting FastAPI backend..."
+echo "Installing backend dependencies..."
 cd ../backend
 pip install -r requirements.txt
