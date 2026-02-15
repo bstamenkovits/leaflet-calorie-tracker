@@ -1,13 +1,13 @@
 """Authentication middleware to protect routes"""
 from fastapi import Request, Response
-from fastapi.responses import RedirectResponse
+from fastapi.responses import RedirectResponse, JSONResponse
 from starlette.middleware.base import BaseHTTPMiddleware
 from auth.session_manager import session_manager
 from auth.oauth import validate_credentials
 
 
 # Public paths that don't require authentication
-PUBLIC_PATHS = {"/api/login", "/api/auth/callback"}
+PUBLIC_PATHS = {"/api/login", "/api/auth/callback", "/api/status"}
 
 
 class AuthMiddleware(BaseHTTPMiddleware):
@@ -40,6 +40,13 @@ class AuthMiddleware(BaseHTTPMiddleware):
 
         # redirect unauthenticated users to login page
         if not self._is_authenticated(request):
+            # For API calls (AJAX), return 401 instead of redirecting to avoid CORS errors
+            if request.url.path.startswith("/api/"):
+                return JSONResponse(
+                    status_code=401,
+                    content={"detail": "Not authenticated"}
+                )
+            # For page requests, redirect to login
             return RedirectResponse(url="/api/login")
 
         response = await call_next(request)
@@ -71,5 +78,14 @@ class AuthMiddleware(BaseHTTPMiddleware):
         if not creds_data:
             return False
 
-        # Validate credentials (will refresh if needed)
-        return validate_credentials(creds_data)
+        # Validate credentials (will refresh if needed and update session)
+        is_valid = validate_credentials(creds_data)
+        
+        if not is_valid:
+            # If credentials are invalid and can't be refreshed, delete the session
+            session_manager.delete_session(session_id)
+            return False
+            
+        # Update session with potentially refreshed credentials
+        session_manager.create_session(session_id, creds_data)
+        return True
