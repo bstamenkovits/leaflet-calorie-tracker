@@ -10,6 +10,9 @@ This application is designed to be deployed/published using [Render](https://ren
 * Set the run command as `bash run.sh`
 * Configure the correct environment variables
 
+### Environment Variables
+TODO: outline all of the relevant environment variables
+
 ## Installation - Local Development
 ### Prerequisites
 * Python 3.11
@@ -53,6 +56,17 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+### Environment Variables
+The application depends on various environment variables, to configure these for locall development create a `.env` file in the `backend/src` directory. See the Deployment section for more details on what environment variables to include, the `.env` file should look something like this:
+
+```.env
+# OAuth2 configuration
+CLIENT_ID=my-client-id
+CLIENT_SECRET=my-client-secret
+
+# Authorized users (comma-separated)
+ALLOWED_USERS=A@B.com,C@D.com
+```
 
 
 
