@@ -62,8 +62,6 @@ class AuthMiddleware(BaseHTTPMiddleware):
         session ID cookie, retrieves the corresponding credentials from the
         session manager, and validates them.
 
-        
-
         Args:
             request: The incoming HTTP request
         Returns:
@@ -80,12 +78,12 @@ class AuthMiddleware(BaseHTTPMiddleware):
 
         # Validate credentials (will refresh if needed and update session)
         is_valid = validate_credentials(creds_data)
-        
+
         if not is_valid:
             # If credentials are invalid and can't be refreshed, delete the session
             session_manager.delete_session(session_id)
             return False
-            
+
         # Update session with potentially refreshed credentials
         session_manager.create_session(session_id, creds_data)
         return True
