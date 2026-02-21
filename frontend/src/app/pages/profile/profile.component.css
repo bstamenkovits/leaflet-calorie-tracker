@@ -1,0 +1,33 @@
+.page-container {
+  padding: 20px;
+  padding-bottom: 80px;
+}
+
+.page-title {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.placeholder-text {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.placeholder-content {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  color: #555;
+}
+
+.placeholder-content ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.placeholder-content li {
+  margin-bottom: 8px;
+}

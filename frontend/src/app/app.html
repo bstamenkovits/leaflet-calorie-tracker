@@ -1,23 +1,6 @@
-<div class="container">
-  <h1 class="title">{{ title() }}</h1>
-  <button class="health-button" (click)="checkBackendHealth()">Check Backend API Health</button>
-  @if (statusMessage()) {
-    <p class="status-message">{{ statusMessage() }}</p>
-  }
-
-  <button class="health-button" (click)="getFoodLogs()">Get Food Logs</button>
-  @if (foodLogsMessage()) {
-    <p class="status-message">{{ foodLogsMessage() }}</p>
-  }
-
-  @if (foodLogs().length > 0) {
-    <div class="food-logs">
-      <h2>Food Logs</h2>
-      @for (log of foodLogs(); track log.id) {
-        <div class="food-log-item">
-          <strong>{{ log.meal }}</strong>: {{ log.ingredient }} - {{ log.quantity }} {{ log.unit }} ({{ log.calories }} cal)
-        </div>
-      }
-    </div>
-  }
+<div class="app-container">
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+  <app-bottom-nav></app-bottom-nav>
 </div>
