@@ -10,12 +10,12 @@ if os.getenv("ENVIRONMENT") != "production":
 
 # Import auth components (after env vars are loaded)
 from auth import router as auth_router, AuthMiddleware
-
+from data import router as data_router
 
 app = FastAPI(title="Leaflet WebApp Backend", version="1.0.0")
 app.add_middleware(AuthMiddleware)
 app.include_router(auth_router)
-
+app.include_router(data_router) 
 
 @app.get("/api/status")
 def status():
