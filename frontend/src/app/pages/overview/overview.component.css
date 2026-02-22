@@ -32,6 +32,34 @@
   color: #666;
 }
 
+.date-display {
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color: aqua !important;
+}
+
+::ng-deep .date-display .p-datepicker-input-icon-container {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+::ng-deep .date-display input {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  text-align: center !important;
+}
+
+::ng-deep .p-inputtext{
+  color: var(--secondary-text-color) !important;
+  font-size: 1rem !important;
+}
+
 .scrollable-content {
   flex: 1;
   overflow-y: auto;

@@ -1,7 +1,8 @@
 <div class="overview-container">
   <div class="top-banner">
     <h2>Good Morning!</h2>
-    <p>{{ currentDate | date:'EEEE d MMM y' }}</p>
+    <p-datepicker [(ngModel)]="date" dateFormat="DD dd M yy" class="date-display"/>
+    <!-- </div> -->
   </div>
 
 
