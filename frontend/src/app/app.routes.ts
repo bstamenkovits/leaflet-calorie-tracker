@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { OverviewComponent } from './pages/overview/agent.component';
+import { OverviewComponent } from './pages/overview/overview.component';
 import { LogComponent } from './pages/log/log.component';
 import { AgentComponent } from './pages/agent/agent.component';
 import { RecipesComponent } from './pages/recipes/recipes.component';
