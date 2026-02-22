@@ -109,3 +109,81 @@ h1 {
   width: 90vw !important;
   max-width: 400px !important;
 }
+
+
+
+/* FOOD DATA */
+.meal-container {
+  margin-bottom: 2rem;
+}
+
+.meal-item{
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 18px;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.meal-item .item-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.meal-item .delete-btn {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: var(--secondary-text-color);
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.meal-item .delete-btn:hover {
+  background-color: #fee;
+  transform: scale(1.1);
+}
+
+.meal-item .delete-btn:active {
+  transform: scale(0.95);
+}
+
+.meal-item p {
+  margin: 0;
+  padding: 0;
+}
+
+.meal-item .row1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 800;
+  /* margin-bottom: 0.25rem; */
+  /* padding: 1rem 0 0 0; */
+}
+
+.meal-item .row2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--secondary-text-color);
+
+  /* padding: 1rem 0 0 0; */
+}
+
+
+/* .meal-item .row1 #calories {
+  font-weight: 600;
+  color: var(--primary-color);
+} */
