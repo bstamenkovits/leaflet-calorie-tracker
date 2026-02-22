@@ -11,23 +11,25 @@ import { DatePickerModule } from 'primeng/datepicker';
   styleUrls: ['./overview.component.css']
 })
 export class OverviewComponent {
-  currentDate = new Date();
-  selectedDate = new Date();
   date: Date | undefined = new Date();
-  selectedDateString = this.formatDateForInput(new Date());
 
-  formatDateForInput(date: Date): string {
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    return `${year}-${month}-${day}`;
+  increaseDate() {
+    if (this.date) {
+      const nextDate = new Date(this.date);
+      nextDate.setDate(nextDate.getDate() + 1);
+      this.date = nextDate;
+      console.log(this.date);
+      // update page content based on the new date
+    }
   }
 
-  onDateChange(event: Event): void {
-    const input = event.target as HTMLInputElement;
-    if (input.value) {
-      this.selectedDate = new Date(input.value + 'T00:00:00');
-      this.selectedDateString = input.value;
+  decreaseDate() {
+    if (this.date) {
+      const nextDate = new Date(this.date);
+      nextDate.setDate(nextDate.getDate() - 1);
+      this.date = nextDate;
+      console.log(this.date);
+      // update page content based on the new date
     }
   }
 }

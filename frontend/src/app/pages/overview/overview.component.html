@@ -1,8 +1,25 @@
 <div class="overview-container">
   <div class="top-banner">
     <h2>Good Morning!</h2>
-    <p-datepicker [(ngModel)]="date" dateFormat="DD dd M yy" class="date-display"/>
-    <!-- </div> -->
+
+    <div class="date-container">
+      <a (click)="decreaseDate()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="change-date-icon">
+          <path fill-rule="evenodd" d="M7.72 12.53a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 1 1 1.06 1.06L9.31 12l6.97 6.97a.75.75 0 1 1-1.06 1.06l-7.5-7.5Z" clip-rule="evenodd" />
+        </svg>
+
+      </a>
+
+      <p-datepicker [(ngModel)]="date" dateFormat="DD dd M yy" class="date-display"/>
+
+      <a (click)="increaseDate()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="change-date-icon">
+          <path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clip-rule="evenodd" />
+        </svg>
+      </a>
+    </div>
+
+
   </div>
 
 
@@ -10,52 +27,52 @@
     <h1>Overview</h1>
     <p>Main overview page (daily summary)</p>
     <div class="placeholder-content">
-    <p>Coming soon:</p>
-    <ul>
-      <li>Add new food entries</li>
-      <li>View daily calorie intake</li>
-      <li>Edit or delete entries</li>
-    </ul>
-  </div>
-  <div class="placeholder-content">
-    <p>Coming soon:</p>
-    <ul>
-      <li>Add new food entries</li>
-      <li>View daily calorie intake</li>
-      <li>Edit or delete entries</li>
-    </ul>
-  </div>
-  <div class="placeholder-content">
-    <p>Coming soon:</p>
-    <ul>
-      <li>Add new food entries</li>
-      <li>View daily calorie intake</li>
-      <li>Edit or delete entries</li>
-    </ul>
-  </div>
-  <div class="placeholder-content">
-    <p>Coming soon:</p>
-    <ul>
-      <li>Add new food entries</li>
-      <li>View daily calorie intake</li>
-      <li>Edit or delete entries</li>
-    </ul>
-  </div>
-  <div class="placeholder-content">
-    <p>Coming soon:</p>
-    <ul>
-      <li>Add new food entries</li>
-      <li>View daily calorie intake</li>
-      <li>Edit or delete entries</li>
-    </ul>
-  </div>
-  <div class="placeholder-content">
-    <p>Coming soon:</p>
-    <ul>
-      <li>Add new food entries</li>
-      <li>View daily calorie intake</li>
-      <li>Edit or delete entries</li>
-    </ul>
-  </div>
+      <p>Coming soon:</p>
+      <ul>
+        <li>Add new food entries</li>
+        <li>View daily calorie intake</li>
+        <li>Edit or delete entries</li>
+      </ul>
+    </div>
+    <div class="placeholder-content">
+      <p>Coming soon:</p>
+      <ul>
+        <li>Add new food entries</li>
+        <li>View daily calorie intake</li>
+        <li>Edit or delete entries</li>
+      </ul>
+    </div>
+    <div class="placeholder-content">
+      <p>Coming soon:</p>
+      <ul>
+        <li>Add new food entries</li>
+        <li>View daily calorie intake</li>
+        <li>Edit or delete entries</li>
+      </ul>
+    </div>
+    <div class="placeholder-content">
+      <p>Coming soon:</p>
+      <ul>
+        <li>Add new food entries</li>
+        <li>View daily calorie intake</li>
+        <li>Edit or delete entries</li>
+      </ul>
+    </div>
+    <div class="placeholder-content">
+      <p>Coming soon:</p>
+      <ul>
+        <li>Add new food entries</li>
+        <li>View daily calorie intake</li>
+        <li>Edit or delete entries</li>
+      </ul>
+    </div>
+    <div class="placeholder-content">
+      <p>Coming soon:</p>
+      <ul>
+        <li>Add new food entries</li>
+        <li>View daily calorie intake</li>
+        <li>Edit or delete entries</li>
+      </ul>
+    </div>
   </div>
 </div>
