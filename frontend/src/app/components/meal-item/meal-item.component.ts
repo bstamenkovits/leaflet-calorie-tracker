@@ -10,4 +10,5 @@ import { MealItem } from '../../services/mock-data.service';
 })
 export class MealItemComponent {
   @Input({ required: true }) item!: MealItem;
+  isExpanded = false;
 }

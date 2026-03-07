@@ -1,4 +1,4 @@
-<div class="meal-item">
+<div class="meal-item" (click)="isExpanded = !isExpanded">
   <div class="item-content">
     <div class="row1">
       <p>{{ item.name }}</p>
@@ -8,6 +8,12 @@
     <div class="row2">
       <p>{{ item.quantity }} {{ item.serving }}</p>
       <p>kcal</p>
+    </div>
+
+    <div class="hidden-content" [class.visible]="isExpanded">
+      <p>Carbs: 10g</p>
+      <p>Protein: 20g</p>
+      <p>Fat: 30g</p>
     </div>
   </div>
 </div>
