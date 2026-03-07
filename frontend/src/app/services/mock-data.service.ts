@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 
-export interface FoodItem {
+export interface MealItem {
   name: string;
   quantity: number;
   serving: string;
@@ -10,16 +10,16 @@ export interface FoodItem {
 }
 
 export interface FoodLogs {
-  breakfast: FoodItem[];
-  lunch: FoodItem[];
-  dinner: FoodItem[];
+  breakfast: MealItem[];
+  lunch: MealItem[];
+  dinner: MealItem[];
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class MockDataService {
-  private readonly breakfastOptions: FoodItem[] = [
+  private readonly breakfastOptions: MealItem[] = [
     { name: 'Scrambled Eggs', quantity: 2, serving: 'egg(s)', calories: 180 },
     { name: 'Oatmeal', quantity: 1, serving: 'cup(s)', calories: 150 },
     { name: 'Berries', quantity: 0.5, serving: 'cup(s)', calories: 40 },
@@ -36,7 +36,7 @@ export class MockDataService {
     { name: 'Coffee', quantity: 1, serving: 'cup(s)', calories: 5 }
   ];
 
-  private readonly lunchOptions: FoodItem[] = [
+  private readonly lunchOptions: MealItem[] = [
     { name: 'Grilled Chicken', quantity: 4, serving: 'oz', calories: 180 },
     { name: 'Caesar Salad', quantity: 1, serving: 'bowl(s)', calories: 250 },
     { name: 'Turkey Sandwich', quantity: 1, serving: 'sandwich(es)', calories: 320 },
@@ -51,7 +51,7 @@ export class MockDataService {
     { name: 'Apple', quantity: 1, serving: 'piece(s)', calories: 95 }
   ];
 
-  private readonly dinnerOptions: FoodItem[] = [
+  private readonly dinnerOptions: MealItem[] = [
     { name: 'Grilled Salmon', quantity: 6, serving: 'oz', calories: 280 },
     { name: 'Roasted Vegetables', quantity: 1, serving: 'cup(s)', calories: 120 },
     { name: 'Brown Rice', quantity: 1, serving: 'cup(s)', calories: 215 },
@@ -88,9 +88,9 @@ export class MockDataService {
   /**
    * Helper method to generate random meal items
    */
-  private generateMealItems(options: FoodItem[], minItems: number, maxItems: number): FoodItem[] {
+  private generateMealItems(options: MealItem[], minItems: number, maxItems: number): MealItem[] {
     const itemCount = Math.floor(Math.random() * (maxItems - minItems + 1)) + minItems;
-    const items: FoodItem[] = [];
+    const items: MealItem[] = [];
     const selectedIndices = new Set<number>();
 
     while (items.length < itemCount && selectedIndices.size < options.length) {

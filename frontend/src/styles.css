@@ -3,11 +3,11 @@
 
 /* You can add global styles to this file, and also import other style files */
 :root {
-    --primary-color: #35cc8c;
-    --secondary-color: #dbfbed;
-    --background-color: #f2f2f2;
-    --card-color:#f7f7f7;
-    --primary-text-color: #0d1220;
+    --primary-color: #305511;
+    --secondary-color: #dae7d7;
+    --background-color: #fefefe;
+    --card-color:#ffffff;
+    --primary-text-color: #0d2013;
     --secondary-text-color: #808080;
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }

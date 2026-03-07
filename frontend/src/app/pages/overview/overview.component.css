@@ -11,6 +11,11 @@
   bottom: 0;
 }
 
+.overview-container h3 {
+  margin: 8px;
+  padding: 0;
+}
+
 .scrollable-content {
   flex: 1;
   overflow-y: auto;
@@ -19,14 +24,13 @@
   -webkit-overflow-scrolling: touch;
 }
 
-h1 {
-  margin-bottom: 1rem;
-}
-
 
 /* TOP BANNER */
 .top-banner {
-  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /* flex-shrink: 0; */
   background-color: white;
   padding: 1rem;
   border-bottom: 1px solid #ddd;
@@ -35,46 +39,21 @@ h1 {
 }
 
 .top-banner h2 {
-  margin: 0;
+  margin: 0px;
+  margin-top: 20px;
   font-size: 1.5rem;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .top-banner p {
   margin: 0.5rem 0 0;
   font-size: 0.9rem;
-  text-align: center;
+  /* text-align: center; */
   color: #666;
 }
 
 
 /* DATE INSIDE TOP BANNER */
-.date-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 0.5rem;
-  padding: 0 1rem;
-  position: relative;
-}
-
-.date-container a {
-  flex-shrink: 0;
-  z-index: 20;
-  cursor: pointer;
-}
-
-.date-display {
-  cursor: pointer;
-  user-select: none;
-  transition: color 0.2s;
-  display: flex;
-  justify-content: center;
-  flex: 1;
-  /* max-width: 200px; */
-  color: aqua !important;
-}
-
 ::ng-deep .date-display .p-datepicker-input-icon-container {
   border: none !important;
   outline: none !important;
@@ -85,7 +64,8 @@ h1 {
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
-  text-align: center !important;
+  /* text-align: center !important; */
+  padding: 0px !important;
   width: 100% !important;
 }
 
@@ -94,96 +74,6 @@ h1 {
   font-size: 1rem !important;
 }
 
-.change-date-icon {
-  width: 20px;
-  height: 20px;
-  color: var(--secondary-text-color);
-  display: block;
+.meal-items {
+  margin-top: 1rem;
 }
-
-/* Datepicker popup styling */
-::ng-deep .p-datepicker {
-  position: fixed !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  width: 90vw !important;
-  max-width: 400px !important;
-}
-
-
-
-/* FOOD DATA */
-.meal-container {
-  margin-bottom: 2rem;
-}
-
-.meal-item{
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 18px;
-  padding: 1rem;
-  margin-bottom: 0.5rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1rem;
-}
-
-.meal-item .item-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.meal-item .delete-btn {
-  flex-shrink: 0;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-  color: var(--secondary-text-color);
-  transition: all 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-}
-
-.meal-item .delete-btn:hover {
-  background-color: #fee;
-  transform: scale(1.1);
-}
-
-.meal-item .delete-btn:active {
-  transform: scale(0.95);
-}
-
-.meal-item p {
-  margin: 0;
-  padding: 0;
-}
-
-.meal-item .row1 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 800;
-  /* margin-bottom: 0.25rem; */
-  /* padding: 1rem 0 0 0; */
-}
-
-.meal-item .row2 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.85rem;
-  color: var(--secondary-text-color);
-
-  /* padding: 1rem 0 0 0; */
-}
-
-
-/* .meal-item .row1 #calories {
-  font-weight: 600;
-  color: var(--primary-color);
-} */

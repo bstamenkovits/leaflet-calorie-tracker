@@ -1,0 +1,41 @@
+.meal-item {
+  background-color: white;
+  border: 1px solid #dddddd9f;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 6px;
+  box-shadow: 0 0px 20px rgba(104, 104, 104, 0.1);
+}
+
+
+.meal-item .item-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.meal-item .item-content .row1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.meal-item .item-content .row2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 0.1rem;
+
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--secondary-text-color);
+
+}
+
+.meal-item p {
+  margin: 0;
+  padding: 0;
+}
