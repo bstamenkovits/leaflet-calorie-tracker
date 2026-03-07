@@ -13,7 +13,7 @@
   flex-direction: column;
 }
 
-.meal-item .item-content .row1 {
+.meal-item .item-content .primary-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,7 +22,7 @@
   font-size: 0.95rem;
 }
 
-.meal-item .item-content .row2 {
+.meal-item .item-content .secondary-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,15 +44,68 @@
   cursor: pointer;
 }
 
+.meal-item.expanded {
+  border: 1px solid var(--primary-color);
+  background-color: rgb(251, 255, 251);
+}
+
 .hidden-content {
   display: none;
-  margin-top: 0.5rem;
-  padding-top: 0.5rem;
-  border-top: 1px solid #eee;
-  font-size: 0.75rem;
-  color: var(--secondary-text-color);
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #b3b3b3;
+  /* font-size: 0.75rem; */
+  /* color: var(--secondary-text-color); */
 }
 
 .hidden-content.visible {
   display: block;
+}
+
+.number-input {
+  width: 2rem;
+  border: none;
+  /* border-bottom: 1px solid #ccc; */
+  outline: none;
+  background: transparent;
+  background-color: var(--secondary-color);
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: inherit;
+  padding: 2px 0;
+  text-align: center;
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.number-input::-webkit-outer-spin-button,
+.number-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.meal-item-button {
+  background-color: var(--primary-color);
+  /* color: var(--secondary-text-color); */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  width: 49%;
+  font-weight: 700;
+}
+
+#save-button {
+  /* background-color: var(--secondary-color);
+  color: var(--primary-text-color); */
+  width: 75%;
+  margin-right: 10px;
 }

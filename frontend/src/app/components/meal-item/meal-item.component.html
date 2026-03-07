@@ -1,19 +1,42 @@
-<div class="meal-item" (click)="isExpanded = !isExpanded">
+<div class="meal-item" [class.expanded]="isExpanded" (click)="isExpanded = true">
   <div class="item-content">
-    <div class="row1">
+    <div class="primary-row">
       <p>{{ item.name }}</p>
       <p id="calories">{{ item.calories }}</p>
     </div>
 
-    <div class="row2">
+    <div class="secondary-row">
       <p>{{ item.quantity }} {{ item.serving }}</p>
       <p>kcal</p>
     </div>
 
-    <div class="hidden-content" [class.visible]="isExpanded">
-      <p>Carbs: 10g</p>
-      <p>Protein: 20g</p>
-      <p>Fat: 30g</p>
+    <div class="hidden-content" [class.visible]="isExpanded" (click)="$event.stopPropagation()">
+
+      <div class="primary-row">
+        <p>Item</p>
+        <p>placeholder for searchable dropdown</p>
+      </div>
+
+      <div class="primary-row">
+        <p>Serving Type</p>
+        <p>placeholder for dropdown</p>
+      </div>
+
+      <div class="primary-row">
+        <p>Quantity</p>
+        <input type="number" min="0" step="1" inputmode="numeric" class="number-input" value="{{item.quantity}}"/>
+      </div>
+
+      <div class="secondary-row">
+        <p>50g</p>
+        <p>{{ item.serving }}</p>
+      </div>
+
+      <div class="button-container">
+        <button (click)="isExpanded = false" id="save-button" class="meal-item-button">Save</button>
+        <button id="delete-button" class="meal-item-button">Delete</button>
+      </div>
+
     </div>
   </div>
 </div>

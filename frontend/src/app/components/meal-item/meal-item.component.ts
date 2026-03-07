@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MealItem } from '../../services/mock-data.service';
 
 @Component({
@@ -8,7 +8,12 @@ import { MealItem } from '../../services/mock-data.service';
   templateUrl: './meal-item.component.html',
   styleUrls: ['./meal-item.component.css']
 })
-export class MealItemComponent {
+export class MealItemComponent implements OnInit {
   @Input({ required: true }) item!: MealItem;
+  @Input() expanded = false;
   isExpanded = false;
+
+  ngOnInit() {
+    this.isExpanded = this.expanded;
+  }
 }

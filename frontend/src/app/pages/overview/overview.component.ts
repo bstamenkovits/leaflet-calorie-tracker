@@ -19,6 +19,9 @@ export class OverviewComponent implements OnInit {
   dinnerItems: MealItem[] = [];
   isLoading = false;
 
+  addingBreakfast = false;
+  newBreakfastItem: MealItem = { name: '', quantity: 1, serving: '', calories: 0 };
+
   constructor(
     private mockDataService: MockDataService,
     private cdr: ChangeDetectorRef

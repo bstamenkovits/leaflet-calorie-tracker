@@ -9,6 +9,8 @@
     <div id="breakfast" class="meal-container">
       <h3>Breakfast</h3>
       <meal-item *ngFor="let item of breakfastItems" [item]="item"></meal-item>
+      <meal-item *ngIf="addingBreakfast" [item]="newBreakfastItem" [expanded]="true"></meal-item>
+      <div class="add-meal-item" *ngIf="!addingBreakfast" (click)="addingBreakfast = true"> + </div>
     </div>
   </div>
 
