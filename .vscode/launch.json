@@ -15,6 +15,17 @@
             ],
             "jinja": true,
             "cwd": "${workspaceFolder}/backend/src",
+        },
+        {
+            "name": "Local Script",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/backend/src/local.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/backend/src",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/backend/src"
+            }
         }
     ]
 }
