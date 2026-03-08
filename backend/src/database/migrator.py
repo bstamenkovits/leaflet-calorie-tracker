@@ -118,7 +118,7 @@ class SQLMigrator:
                     raise
                 logger.info(f"✓ Successfully applied: {file_name}")
 
-            elif result[0]['file_hash'] != current_hash:
+            elif result[0][0] != current_hash:
                 logger.error(error_msg := f"Migration {file_name} has changed since it was last applied. Detected hash: {current_hash}, expected hash: {result[0]['file_hash']}.")
                 raise Exception(error_msg)
 
