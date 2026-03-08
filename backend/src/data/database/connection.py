@@ -1,8 +1,12 @@
 import psycopg2
 import os
+import logging
 from contextlib import contextmanager
 from pathlib import Path
 from typing import Generator, Any
+
+
+logger = logging.getLogger(__name__)
 
 
 class DatabaseConnection:
@@ -26,9 +30,11 @@ class DatabaseConnection:
                 port=os.getenv("DB_PORT"),
                 dbname=os.getenv("DB_NAME")
             )
+            logger.info("Database connection established")
             yield connection
             connection.commit()  # Auto-commit on successful operations
         except Exception as e:
+            logger.error(f"Database error: {e}")
             if connection:
                 connection.rollback()
             raise
@@ -63,6 +69,7 @@ class DatabaseConnection:
             ```
         """
         with self.get_cursor() as cursor:
+            logging.debug(f"Executing query: {query} with params: {params}")
             cursor.execute(query, params or [])
             return cursor.rowcount
 
@@ -91,17 +98,20 @@ class DatabaseConnection:
             ```
         """
         with self.get_cursor() as cursor:
+            logging.debug(f"Executing query: {query} with params_list: {params_list}")
             cursor.executemany(query, params_list)
             return cursor.rowcount
 
     def fetch_results(self, query: str, params=None):
         """Fetch all results from a SELECT query"""
         with self.get_cursor() as cursor:
+            logging.debug(f"Fetching results for query: {query} with params: {params}")
             cursor.execute(query, params or [])
             return cursor.fetchall()
 
     def fetch_one(self, query: str, params=None):
         """Fetch a single result from a SELECT query"""
         with self.get_cursor() as cursor:
+            logging.debug(f"Fetching single result for query: {query} with params: {params}")
             cursor.execute(query, params or [])
             return cursor.fetchone()
